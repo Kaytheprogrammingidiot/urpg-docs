@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modding | URPG Docs</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <button onclick="window.location.href='../'">Home</button>
+    <h1>Modding Documentation</h1>
+    <p>Welcome to the modding documentation for URPG. Here you will find all the information you need to create and manage mods for the game.</p>
+    <h1>Open Mods</h1>
+    <h2>QoL Mods</h2>
+    <p>
+        Before you import a Quality of Life mod, you will need to load a custom engine.
+        To do this, select "Load Custom Engine". You will then be prompted to select a .egn file.
+        The correct .egn file for QoL mods is "React5.egn", which can be found in the Discord Server in the React5 forum.
+        After selecting the correct .egn file, you can then import the QoL mod by selecting "Import Mod" and choosing the .zip file of the mod.
+    </p>
+
+    <h2>Custom Character Mods</h2>
+    <p>
+        To import a custom character mod, you will need to load a custom engine.
+        To do this, select "Load Custom Engine". You will then be prompted to select a .egn file.
+        The correct .egn file for custom character mods is "CCE.egn", which can be found in the Discord Server in the Custom Character Engine forum.
+        After selecting the correct .egn file, you can then import the custom character mod by selecting "Import Mod" and choosing the .zip file of the mod.
+    </p>
+    <h1>Creating Mods</h1>
+    <h2>RX5/React5 Mod</h2>
+    <p>
+        To create a mod for React5, you will need a text editor.
+    </p>
+    <h3>Set up files</h3>
+
+    <p>
+        Make a new text file and rename it to 'yourmodname.rx5'. It is important that the file extension is .rx5 and not .txt.
+    </p>
+    <h3>Syntax</h3>
+    <p>
+        A simple mod for changing the camera style to tweening would look like this:
+    </p>
+    <pre>
+allow r import "react5-db";
+
+
+r.cameraX method.create(tween, into {
+    time: 0.07,
+    swing: sine.in-out;
+});
+
+r.cameraY method.create(tween, into {
+    time: 0.07,
+    swing: sine.in-out;
+})
+
+void flow {
+    react5.register.id: kay-smooth-camera
+}
+</pre>
+<p>
+    This mod changes the cameraX and cameraY methods to use tweening with a time of 0.07 seconds with sine in-out easing.
+    Finally, it registers the mod with the id "kay-smooth-camera". Make sure to change the id to something unique to avoid conflicts with other mods.
+</p>
+<h2>CCE Mod</h2>
+<p>
+    To create a mod for the Custom Character Engine, you will need some image editing software that supports svg files, such as Inkscape or Adobe Illustrator.
+</p>
+<p>
+    From the Discord Server, download the CCE Mod Template from the CCE Template forum. You may delete info.json, as it does nothing.
+    Extract the zip file and open the folder. You will see file names such as "i1.svg", "i2.svg", etc. The "i" in "i1.svg" stands for idle, the "w" in "w1.svg" stands for walk, and the "j" in "j1.svg" stands for jump. The number represents the frame number.
+    Currently, the CCE supports 4 frames for idle, 11 frames for walking, and 3 frames for jumping. You cannot add nor remove frames, as this will cause the mod to accidentally import a gray box with a question mark for that frame you deleted, and if you added, it just won't import at all.
+    You can replace these files with your own svg files, but make sure to keep the same file names. I recommend editing them directly instead.
+</p>
+</body>
+</html>

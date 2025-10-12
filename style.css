@@ -1,0 +1,50 @@
+body {
+    background-color: #292929;
+    background-image: url("src/urpgsky.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+h1, h2, h3, h4, h5, h6 {
+    color:aliceblue;
+    font-family: "OptimusPrinceps", sans-serif;
+}
+ul, li, a {
+    color: aliceblue;
+    font-family: "OptimusPrinceps", sans-serif;
+}
+pre, code {
+    color: rgb(214, 103, 245);
+    background-color: #1e1e1e;
+}
+p {
+    color: aliceblue;
+    font-family: "OptimusPrinceps", sans-serif;
+}
+@font-face {
+    font-family: "OptimusPrinceps";
+    src: url('src/OptimusPrinceps.ttf') format('truetype');
+}
+button {
+    padding: 0.75em 1.5em;
+    font-size: 1rem;
+    border: none;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.2); /* semi-transparent */
+    color: white;
+    backdrop-filter: blur(10px); /* blur background */
+    -webkit-backdrop-filter: blur(10px); /* Safari support */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+button:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
