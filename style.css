@@ -27,6 +27,10 @@ ul, li, a {
 pre, code {
     color: rgb(214, 103, 245);
     background-color: #1e1e1e;
+    margin-top: 20px;
+    margin-right: 30px;
+    margin-bottom: 20px;
+    margin-left: 30px;
 }
 p {
     color: aliceblue;
